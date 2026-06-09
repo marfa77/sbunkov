@@ -1,6 +1,6 @@
 export const siteConfig = {
-  basePath: "/sbunkov",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://marfa77.github.io/sbunkov",
+  basePath: "",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://sbunkov.ru",
   name: "Сергей Буньков",
   description:
     "Сергей Буньков — генеральный директор, руководитель в сфере комплексного сервисного обслуживания АЗС и технологического оборудования для нефтегазового сектора.",

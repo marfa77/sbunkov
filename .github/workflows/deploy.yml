@@ -35,7 +35,7 @@ jobs:
       - name: Build static site
         run: npm run build
         env:
-          NEXT_PUBLIC_SITE_URL: https://marfa77.github.io/sbunkov
+          NEXT_PUBLIC_SITE_URL: https://sbunkov.ru
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

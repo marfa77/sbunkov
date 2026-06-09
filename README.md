@@ -1,12 +1,10 @@
-# sbunkov — сайт-визитка Сергея Бунькова
+# sbunkov.ru — сайт-визитка Сергея Бунькова
 
-Персональный сайт на русском языке: генеральный директор, АЗС и нефтегазовое оборудование.
+Персональный сайт на русском языке.
 
 ## Стек
 
-- Next.js 14 (App Router)
-- TypeScript
-- Tailwind CSS
+- Next.js 14, TypeScript, Tailwind CSS
 - Статический экспорт → GitHub Pages
 
 ## Локальная разработка
@@ -16,31 +14,38 @@ npm install
 npm run dev
 ```
 
-Откройте `http://localhost:3000/sbunkov`.
-
-## Сборка
-
-```bash
-npm run build
-```
-
-Результат — папка `out/`.
-
 ## Деплой
 
-Сайт публикуется через GitHub Actions при push в `main`.
-
 - Репозиторий: [marfa77/sbunkov](https://github.com/marfa77/sbunkov)
-- URL: https://marfa77.github.io/sbunkov/
+- Домен: **https://sbunkov.ru**
+- GitHub Actions: `.github/workflows/deploy.yml`
 
-### Настройка GitHub Pages (один раз)
+## DNS для sbunkov.ru
 
-1. Откройте **Settings → Pages** в репозитории.
-2. В **Source** выберите **GitHub Actions**.
-3. Запушьте в `main` — workflow соберёт и опубликует сайт.
+У регистратора домена добавьте A-записи для корня `@`:
 
-### Свой домен (опционально)
+```text
+@  A  185.199.108.153
+@  A  185.199.109.153
+@  A  185.199.110.153
+@  A  185.199.111.153
+```
 
-1. Добавьте файл `public/CNAME` с доменом (например `sbunkov.ru`).
-2. Настройте DNS у регистратора.
-3. Обновите `NEXT_PUBLIC_SITE_URL` в `.github/workflows/deploy.yml`.
+Опционально IPv6:
+
+```text
+@  AAAA  2606:50c0:8000::153
+@  AAAA  2606:50c0:8001::153
+@  AAAA  2606:50c0:8002::153
+@  AAAA  2606:50c0:8003::153
+```
+
+Для `www.sbunkov.ru`:
+
+```text
+www  CNAME  marfa77.github.io
+```
+
+После настройки DNS в GitHub: **Settings → Pages → Custom domain** → `sbunkov.ru`, включить **Enforce HTTPS**.
+
+Распространение DNS — от нескольких минут до 24–48 часов.
