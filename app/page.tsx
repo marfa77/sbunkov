@@ -9,6 +9,7 @@ import {
   Users,
 } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
+import { FooterCredit } from "@/components/FooterCredit";
 import { siteConfig } from "@/lib/config";
 import { assetPath } from "@/lib/paths";
 import { profile } from "@/lib/profile";
@@ -361,6 +362,11 @@ export default function Home() {
             {siteConfig.company.name}
           </a>
         </div>
+        <FooterCredit
+          variant="card"
+          locale="ru"
+          className="footer-credit mx-auto mt-4 max-w-6xl text-center text-xs text-brand-400"
+        />
       </footer>
     </div>
   );

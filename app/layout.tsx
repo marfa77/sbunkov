@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/config";
 import { assetPath } from "@/lib/paths";
+import { PixidOrganizationSchema } from "@/components/PixidOrganizationSchema";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -39,7 +40,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ru">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <PixidOrganizationSchema />
+        {children}
+      </body>
     </html>
   );
 }
